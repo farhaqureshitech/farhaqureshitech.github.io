@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>Farha Qureshi | Senior .NET Developer</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial,sans-serif;
+            color: #1d1d1d
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            border-bottom: 2px solid #1d1d1d;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 5
+        }
+
+            nav a {
+                color: #1d1d1d;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 700
+            }
+
+        .hero, .section {
+            padding: 90px 7%
+        }
+
+        .hero {
+            background: #e3e3ff;
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            gap: 50px;
+            align-items: center;
+            border-bottom: 2px solid
+        }
+
+        h1 {
+            font-size: 64px;
+            margin: 12px 0
+        }
+
+        h2 {
+            font-size: 42px;
+            margin: 0 0 35px
+        }
+
+        .lead {
+            font-size: 24px;
+            line-height: 1.5
+        }
+
+        .tag {
+            display: inline-block;
+            border: 2px solid;
+            border-radius: 30px;
+            background: #e3f2ff;
+            padding: 7px 14px;
+            font-weight: bold
+        }
+
+        .portrait {
+            min-height: 420px;
+            border: 2px solid;
+            border-radius: 220px 220px 20px 20px;
+            background: #fff url('profile.jpg') center/cover no-repeat
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 15px 24px;
+            border: 2px solid;
+            border-radius: 10px;
+            color: #1d1d1d;
+            text-decoration: none;
+            background: #fff;
+            box-shadow: 5px 5px #7575c8;
+            font-weight: bold
+        }
+
+        .cards, .projects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px
+        }
+
+        .card {
+            padding: 28px;
+            border: 2px solid;
+            border-radius: 20px
+        }
+
+            .card:nth-child(1) {
+                background: #e3e3ff
+            }
+
+            .card:nth-child(2) {
+                background: #f3ffe3
+            }
+
+            .card:nth-child(3) {
+                background: #fde4f9
+            }
+
+            .card:nth-child(4) {
+                background: #e3f2ff
+            }
+
+        .about {
+            background: #e3e3ff;
+            border-top: 2px solid;
+            border-bottom: 2px solid
+        }
+
+        .timeline {
+            border-left: 3px solid;
+            margin-left: 120px;
+            padding-left: 36px
+        }
+
+        .job {
+            position: relative;
+            margin: 0 0 40px
+        }
+
+            .job:before {
+                content: '';
+                position: absolute;
+                width: 17px;
+                height: 17px;
+                border: 2px solid;
+                border-radius: 50%;
+                background: #fde4f9;
+                left: -47px;
+                top: 4px
+            }
+
+        .project {
+            border: 2px solid;
+            border-radius: 20px;
+            overflow: hidden
+        }
+
+            .project .visual {
+                height: 260px;
+                background: linear-gradient(135deg,#e3f2ff,#e3e3ff);
+                display: grid;
+                place-items: center;
+                font-size: 60px
+            }
+
+            .project .content {
+                padding: 25px
+            }
+
+        .process {
+            background: #e3e3ff;
+            border-top: 2px solid;
+            border-bottom: 2px solid
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 18px
+        }
+
+        .step {
+            border: 2px solid;
+            border-radius: 20px;
+            background: #fff;
+            padding: 24px
+        }
+
+        .skills {
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+            line-height: 2
+        }
+
+        .contact {
+            text-align: center
+        }
+
+        .footer {
+            padding: 35px 7%;
+            background: #e3e3ff;
+            border-top: 2px solid
+        }
+
+        .muted {
+            color: #555;
+            line-height: 1.6
+        }
+
+        .tech {
+            font-weight: bold;
+            color: #5757ad
+        }
+
+        @media(max-width:800px) {
+            .hero {
+                grid-template-columns: 1fr
+            }
+
+            .portrait {
+                min-height: 360px
+            }
+
+            .cards, .projects, .steps {
+                grid-template-columns: 1fr
+            }
+
+            h1 {
+                font-size: 45px
+            }
+
+            h2 {
+                font-size: 34px
+            }
+
+            .timeline {
+                margin-left: 10px
+            }
+
+            nav .links {
+                display: none
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav><strong>FQ.</strong><div class='links'><a href='#home'>Home</a><a href='#work'>What I Do</a><a href='#about'>About</a><a href='#projects'>Projects</a><a href='#process'>Process</a><a href='#contact'>Contact</a></div></nav>
+    <section class='hero' id='home'><div><span class='tag'>HELLO!</span><h1>I'm Farha Qureshi.</h1><p class='lead'>I build scalable, reliable enterprise applications using .NET, cloud and API-driven architectures.</p><p class='lead'>Indore, India | Open to UAE & Saudi Arabia Opportunities</p><a class='btn' href='#projects'>See My Work</a> <a class='btn' href='Farha-Qureshi-Resume.pdf' download>Download Resume</a></div><div class='portrait' title='Add your photo as profile.jpg'></div></section>
+    <section class='section' id='work'><span class='tag'>MY EXPERTISE</span><h2>What I Do</h2><div class='cards'><div class='card'><h3>Backend & API Development</h3><p>C#, .NET Core, ASP.NET Core, REST APIs and enterprise business applications.</p></div><div class='card'><h3>Cloud & Serverless Solutions</h3><p>AWS Lambda, SQS, SNS, S3, API Gateway and CloudWatch-based integrations.</p></div><div class='card'><h3>Enterprise Application Development</h3><p>Application development across FinTech, transportation and government systems.</p></div><div class='card'><h3>Production & Delivery</h3><p>Troubleshooting, deployment readiness, CI/CD and production support.</p></div></div></section>
+    <section class='section about' id='about'><span class='tag'>ABOUT</span><h2>More about me</h2><p class='lead'>I'm Farha Qureshi, a Development Team Lead and Senior .NET professional with 10+ years of experience building and supporting enterprise applications.</p><p class='muted'>My experience spans FinTech and trading platforms, eKYC and digital onboarding, transport management and large-scale government applications. I work with C#, .NET, ASP.NET Web API, SQL Server, AWS and REST APIs across development, integrations, production support and release delivery.</p><h2 style='margin-top:70px'>My career path</h2><div class='timeline'><div class='job'><h3>Accenture</h3><p>App / Cloud Support Specialist</p></div><div class='job'><h3>InfoBeans</h3><p>Development Team Lead / Senior .NET Developer</p></div><div class='job'><h3>Swastika Investmart</h3><p>.NET Developer | FinTech / Trading / eKYC</p></div><div class='job'><h3>National Informatics Centre</h3><p>Software Developer | Government Applications</p></div></div></section>
+    <section class='section' id='projects'><span class='tag'>FEATURED WORK</span><h2>Selected Projects</h2><div class='projects'><article class='project'><div class='visual'>eKYC</div><div class='content'><h3>eKYC & Digital Account Opening</h3><p>Digital onboarding with PAN, Aadhaar, DigiLocker, bank verification and digital signing integrations.</p><p class='tech'>C# • .NET • Web API • SQL Server • SignalR • Angular</p></div></article><article class='project'><div class='visual'>TMS</div><div class='content'><h3>Transport Management System</h3><p>Enterprise transportation platform supporting route operations, billing, production workflows and cloud processing.</p><p class='tech'>C# • .NET • SQL Server • AWS Lambda • SQS</p></div></article><article class='project'><div class='visual'>Gov</div><div class='content'><h3>Food Procurement System</h3><p>Large-scale government application supporting food-grain procurement and digitisation.</p><p class='tech'>C# • ASP.NET • SQL Server</p></div></article><article class='project'><div class='visual'>API</div><div class='content'><h3>FoodRatingApp</h3><p>API-driven application with service-layer architecture, logging, exception handling and automated tests.</p><p class='tech'>.NET • REST API • Service Layer • Unit Testing</p></div></article></div></section>
+    <section class='section process' id='process'><span class='tag'>PROCESS</span><h2>How I approach engineering</h2><div class='steps'><div class='step'><b>01 Understand</b><p>Business requirements and existing system.</p></div><div class='step'><b>02 Design</b><p>Architecture, APIs and database.</p></div><div class='step'><b>03 Develop</b><p>Clean, maintainable .NET implementation.</p></div><div class='step'><b>04 Integrate</b><p>Cloud and third-party integrations.</p></div><div class='step'><b>05 Test</b><p>Unit, integration and functional validation.</p></div><div class='step'><b>06 Deliver</b><p>CI/CD, deployment and production support.</p></div></div><h2 style='margin-top:70px'>Tools that power my work</h2><div class='skills'>C# ✦ .NET Core ✦ ASP.NET Core ✦ Web API ✦ SQL Server ✦ AWS Lambda ✦ SQS ✦ S3 ✦ API Gateway ✦ Azure DevOps ✦ Git ✦ Postman ✦ Visual Studio ✦ GitHub Copilot</div></section>
+    <section class='section contact' id='contact'><span class='tag'>CONTACT</span><h2>Let's build something impactful together.</h2><p class='lead'>Indore, India | Open to UAE & Saudi Arabia opportunities</p><p class='muted'>Replace this line with your email, phone number and LinkedIn URL.</p><a class='btn' href='Farha-Qureshi-Resume.pdf' download>Download Farha Qureshi's Resume</a></section><footer class='footer'>© 2026 Farha Qureshi. All rights reserved.</footer>
+</body>
+</html>
