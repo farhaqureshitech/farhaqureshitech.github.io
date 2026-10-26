@@ -981,6 +981,449 @@
             letter-spacing: 1px;
         }
 
+
+
+        /* RESPONSIVE OVERRIDES - COPILOT */
+        html,
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        img,
+        svg {
+            max-width: 100%;
+        }
+
+        section {
+            scroll-margin-top: 75px;
+        }
+
+        /* Tablet layout */
+        @media (min-width: 801px) and (max-width: 1100px) {
+            .hero {
+                grid-template-columns: 1fr 0.9fr;
+                gap: 35px;
+                padding: 70px 5%;
+            }
+
+            h1 {
+                font-size: 52px;
+            }
+
+            .lead {
+                font-size: 20px;
+            }
+
+            .portrait-wrapper {
+                width: 100%;
+                max-width: 500px;
+            }
+
+            .portrait {
+                width: 100%;
+                height: 480px;
+            }
+
+            .experience-badge {
+                width: 120px;
+                height: 120px;
+                left: -20px;
+            }
+
+            .card {
+                padding: 28px;
+                gap: 22px;
+            }
+
+            .service-icon {
+                width: 90px;
+                height: 90px;
+                min-width: 90px;
+            }
+
+            .service-content h3 {
+                font-size: 22px;
+            }
+
+            .service-content p {
+                font-size: 17px;
+            }
+        }
+
+        /* Main mobile layout */
+        @media (max-width: 800px) {
+            .hero,
+            .section,
+            .process-upgrade,
+            .contact-upgrade {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            nav {
+                padding: 15px 22px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding-top: 60px;
+                padding-bottom: 65px;
+            }
+
+            h1 {
+                font-size: clamp(40px, 11vw, 52px);
+                line-height: 1.05;
+            }
+
+            .lead {
+                font-size: 19px;
+                line-height: 1.55;
+            }
+
+            .hero-contact-item {
+                font-size: 16px;
+                align-items: flex-start;
+            }
+
+            .hero-contact-item span,
+            .hero-contact-item a {
+                overflow-wrap: anywhere;
+            }
+
+            .btn {
+                padding: 14px 20px;
+            }
+
+            .portrait-wrapper {
+                width: min(100%, 540px);
+                max-width: 540px;
+                margin: 0 auto;
+            }
+
+            .portrait {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1 / 0.92;
+                border-radius: 50% 50% 18px 18px;
+                background-position: center;
+            }
+
+            .experience-badge {
+                width: 110px;
+                height: 110px;
+                left: -5px;
+                top: 5px;
+            }
+
+            .circle-text {
+                font-size: 11px;
+            }
+
+            .badge-arrow {
+                font-size: 25px;
+            }
+
+            .sparkles {
+                right: 5px;
+                top: -45px;
+                font-size: 38px;
+            }
+        }
+
+        /* Phone layout */
+        @media (max-width: 600px) {
+            .services-heading {
+                text-align: center;
+            }
+
+            .services-heading h2 {
+                font-size: 38px;
+            }
+
+            .cards {
+                gap: 20px;
+            }
+
+            .card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 26px;
+                gap: 18px;
+            }
+
+            .service-icon {
+                width: 72px;
+                height: 72px;
+                min-width: 72px;
+            }
+
+            .service-icon svg {
+                width: 35px;
+                height: 35px;
+            }
+
+            .service-content h3 {
+                font-size: 22px;
+            }
+
+            .service-content p {
+                font-size: 16px;
+                line-height: 1.55;
+            }
+
+            .check-portfolio-btn {
+                padding: 14px 28px;
+                font-size: 17px;
+            }
+
+            .about-top {
+                gap: 45px;
+            }
+
+            .about-visual-wrap {
+                width: 270px;
+                height: 270px;
+            }
+
+            .about-curves {
+                width: 115px;
+                height: 105px;
+                left: -45px;
+                top: 90px;
+            }
+
+            .about-mini-badge {
+                width: 82px;
+                height: 82px;
+                right: -5px;
+                top: 20px;
+            }
+
+            .about-copy h2 {
+                font-size: 36px;
+            }
+
+            .about-lead {
+                font-size: 18px;
+            }
+
+            .about-copy .muted {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .career-heading {
+                margin-bottom: 40px;
+            }
+
+            .career-heading h2 {
+                font-size: 34px;
+            }
+
+            .career-item {
+                padding-bottom: 42px;
+            }
+
+            .career-date {
+                font-size: 11px;
+            }
+
+            .career-details h3 {
+                font-size: 19px;
+            }
+
+            .career-details p {
+                font-size: 15px;
+                line-height: 1.55;
+            }
+
+            #projects h2 {
+                font-size: 34px;
+                line-height: 1.2;
+            }
+
+            .projects {
+                gap: 22px;
+            }
+
+            .project .visual {
+                height: 210px;
+            }
+
+            .project .content {
+                padding: 22px;
+            }
+
+            .project .content h3 {
+                font-size: 21px;
+                margin-top: 0;
+            }
+
+            .project .content p {
+                font-size: 15px;
+                line-height: 1.55;
+            }
+
+            .tech {
+                font-size: 14px !important;
+                line-height: 1.6 !important;
+            }
+
+            .process-head h2 {
+                font-size: 34px;
+            }
+
+            .process-grid {
+                gap: 20px;
+            }
+
+            .process-card {
+                min-height: auto;
+                padding: 25px;
+            }
+
+            .process-icon {
+                width: 62px;
+                height: 62px;
+                margin-bottom: 22px;
+            }
+
+            .process-icon svg {
+                width: 31px;
+                height: 31px;
+            }
+
+            .process-card h3 {
+                font-size: 22px;
+            }
+
+            .process-card p {
+                font-size: 16px;
+            }
+
+            .process-no {
+                right: 22px;
+                top: 22px;
+                font-size: 17px;
+            }
+
+            .tools-label {
+                margin-top: 60px;
+            }
+
+            .tools-label span {
+                font-size: 13px;
+                padding: 7px 14px;
+            }
+
+            .tools-track {
+                font-size: 19px;
+                gap: 22px;
+            }
+
+            .tool-star {
+                font-size: 13px;
+            }
+
+            .contact-head h2 {
+                font-size: 34px;
+                line-height: 1.2;
+                margin-bottom: 40px;
+            }
+
+            .contact-cards {
+                gap: 20px;
+            }
+
+            .contact-card {
+                min-height: 210px;
+                padding: 25px 18px;
+            }
+
+            .contact-card p,
+            .contact-card a {
+                font-size: 15px;
+                overflow-wrap: anywhere;
+            }
+
+            .contact-round-icon {
+                width: 62px;
+                height: 62px;
+            }
+
+            .contact-round-icon svg {
+                width: 29px;
+                height: 29px;
+            }
+
+            .resume-box {
+                margin-top: 35px;
+                padding: 45px 22px;
+            }
+
+            .resume-box h3 {
+                font-size: 27px;
+            }
+
+            .resume-box p {
+                font-size: 16px;
+            }
+        }
+
+        /* Extra-small phones */
+        @media (max-width: 360px) {
+            .hero,
+            .section,
+            .process-upgrade,
+            .contact-upgrade {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            h1 {
+                font-size: 37px;
+            }
+
+            .lead {
+                font-size: 17px;
+            }
+
+            .hero-contact-item {
+                font-size: 14px;
+            }
+
+            .hero-contact-icon {
+                width: 34px;
+                height: 34px;
+                min-width: 34px;
+            }
+
+            .portrait-wrapper {
+                width: 100%;
+            }
+
+            .experience-badge {
+                width: 92px;
+                height: 92px;
+            }
+
+            .about-visual-wrap {
+                width: 230px;
+                height: 230px;
+            }
+
+            .about-curves {
+                display: none;
+            }
+
+            .card,
+            .process-card {
+                padding: 22px;
+            }
+        }
+
 </style>
 </head>
 <body>
