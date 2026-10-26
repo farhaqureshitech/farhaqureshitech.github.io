@@ -862,6 +862,104 @@
                 stroke-linejoin: round;
             }
 
+        /* ==========================================
+   STRONGER SCROLL REVEAL ANIMATIONS
+   ========================================== */
+
+
+        /* Section headings */
+
+        .reveal-heading {
+            opacity: 0;
+            transform: translateY(70px);
+            transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+            .reveal-heading.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+
+        /* Cards coming from left */
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-80px) scale(0.96);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+
+        /* Cards coming from right */
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(80px) scale(0.96);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+
+            .reveal-left.show,
+            .reveal-right.show {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+
+
+        /* General bottom-to-top reveal */
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(70px) scale(0.97);
+            transition: opacity 0.85s ease, transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+            .reveal-up.show {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+
+        /* Stagger effect */
+
+        .delay-1 {
+            transition-delay: 0.08s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.16s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.24s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.32s;
+        }
+
+        .delay-5 {
+            transition-delay: 0.40s;
+        }
+
+        .delay-6 {
+            transition-delay: 0.48s;
+        }
+
+
+        /* Keep animations accessible */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .reveal-heading,
+            .reveal-left,
+            .reveal-right,
+            .reveal-up {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
 </style>
 </head>
 <body>
@@ -880,7 +978,7 @@
                         </svg>
                     </span>
 
-                    <span>India | Open to UAE &amp; Saudi Arabia Opportunities</span>
+                    <span>India | Open to relocation: UAE &amp; Saudi Arabia</span>
                 </div>
 
 
@@ -999,7 +1097,7 @@
                 </div>
                 <div class="service-content">
                     <h3>Backend &amp; API Development</h3>
-                    <p>C#, .NET Core, ASP.NET Core, REST APIs and enterprise business applications.</p>
+                    <p>Design and development of scalable enterprise applications using C#, .NET / .NET Core, ASP.NET Core, REST APIs, SQL Server and secure backend integrations.</p>
                 </div>
             </div>
 
@@ -1019,7 +1117,7 @@
                 </div>
                 <div class="service-content">
                     <h3>Cloud &amp; Serverless Solutions</h3>
-                    <p>AWS Lambda, SQS, SNS, S3, API Gateway and CloudWatch-based integrations.</p>
+                    <p>Building AWS serverless solutions using Lambda, SQS, S3, API Gateway and CloudWatch for asynchronous processing, integrations and reliable application workflows.</p>
                 </div>
             </div>
 
@@ -1045,8 +1143,8 @@
                     </svg>
                 </div>
                 <div class="service-content">
-                    <h3>Enterprise Application Development</h3>
-                    <p>Application development across FinTech, transportation and government systems.</p>
+                    <h3>Enterprise Architecture &amp; Integration</h3>
+                    <p>Designing business-critical enterprise solutions with secure APIs, third-party integrations, authentication, distributed workflows and scalable application architecture.</p>
                 </div>
             </div>
 
@@ -1071,8 +1169,8 @@
 
                 </div>
                 <div class="service-content">
-                    <h3>Production &amp; Delivery</h3>
-                    <p>Troubleshooting, deployment readiness, CI/CD and production support.</p>
+                    <h3>Technical Leadership &amp; Delivery</h3>
+                    <p>Technical ownership across development, code reviews, troubleshooting, CI/CD, releases, production support and collaboration with cross-functional teams.</p>
                 </div>
             </div>
         </div>
@@ -1133,61 +1231,89 @@
             <div class="about-copy">
                 <span class="tag">✱ ABOUT</span>
                 <h2>More about me</h2>
-                <p class="about-lead">I'm Farha Qureshi, a Development Team Lead and Senior .NET professional with 10+ years of experience building and supporting enterprise applications.</p>
-                <p class="muted">My experience spans FinTech and trading platforms, eKYC and digital onboarding, transport management and large-scale government applications. I work with C#, .NET, ASP.NET Web API, SQL Server, AWS and REST APIs across development, integrations, production support and release delivery.</p>
+                <p class="about-lead">I'm a Development Team Lead and Senior .NET professional with 10+ years of experience designing, developing and supporting scalable enterprise applications.</p>
+                <p class="muted">My experience spans FinTech & trading, eKYC & digital onboarding, transportation and government solutions. I work across C#, .NET, ASP.NET Core/Web API, SQL Server and AWS, with hands-on experience in API integrations, cloud/serverless processing, production troubleshooting and end-to-end solution delivery.</p>
             </div>
         </div>
 
         <div class="career-heading">
             <h2>My career path</h2>
-            <p>I have worked across enterprise application development, cloud integrations, production support, FinTech, transportation and government systems.</p>
+            <p>My career has evolved from hands-on development to leading the design, delivery and support of enterprise solutions.</p>
         </div>
 
         <div class="career-timeline">
             <div class="career-item">
-                <div class="career-date">CURRENT</div>
+                <div class="career-date">Jan 2024 - Present</div>
                 <div class="career-dot dot-purple"></div>
-                <div class="career-details"><h3>Accenture</h3><p class="career-role">App / Cloud Support Specialist</p><p>Enterprise application support, cloud-based solutions, troubleshooting and delivery.</p></div>
+                <div class="career-details">
+                    <h3>Accenture</h3><p class="career-role">Development Team Lead / Senior .NET Developer</p>
+                    <p>Leading development and production support for an enterprise Transport Management System, coordinating developers, QA, business stakeholders and dependent teams. Hands-on with C#, .NET, REST APIs, SQL Server and AWS serverless services, with responsibility across troubleshooting, cloud workflows, release delivery, code reviews and engineering best practices.</p>
+                </div>
             </div>
             <div class="career-item">
-                <div class="career-date">PREVIOUS</div>
+                <div class="career-date">May 2022 - Dec 2023</div>
                 <div class="career-dot dot-pink"></div>
-                <div class="career-details"><h3>InfoBeans</h3><p class="career-role">Development Team Lead / Senior .NET Developer</p><p>Led and delivered .NET-based enterprise application development and integrations.</p></div>
+                <div class="career-details">
+                    <h3>InfoBeans</h3><p class="career-role">Senior Software Engg</p>
+                    <p>Designed, developed and maintained enterprise web and desktop applications using C#, .NET, SQL Server and REST APIs. Delivered third-party integrations and business-critical enhancements while focusing on performance, reliability, maintainability and production support.</p>
+                </div>
             </div>
             <div class="career-item">
-                <div class="career-date">PREVIOUS</div>
+                <div class="career-date">Sep 2019 - May 2022</div>
                 <div class="career-dot dot-yellow"></div>
-                <div class="career-details"><h3>Swastika Investmart</h3><p class="career-role">.NET Developer | FinTech / Trading / eKYC</p><p>Worked on financial technology, trading and digital onboarding solutions.</p></div>
+                <div class="career-details">
+                    <h3>Swastika Investmart</h3><p class="career-role">.NET Developer | FinTech / Trading / eKYC</p>
+                    <p>Developed and enhanced a digital eKYC and customer onboarding platform supporting Aadhaar authentication, PAN verification, digital signing, payment gateway, bank verification and third-party integrations. Built and maintained REST APIs and backend components supporting secure and seamless customer onboarding.</p>
+                </div>
             </div>
             <div class="career-item">
-                <div class="career-date">EARLIER</div>
+                <div class="career-date">Sep 2016 - Jan 2019</div>
                 <div class="career-dot dot-blue"></div>
-                <div class="career-details"><h3>National Informatics Centre</h3><p class="career-role">Software Developer | Government Applications</p><p>Contributed to large-scale government application development and database-driven systems.</p></div>
+                <div class="career-details">
+                    <h3>National Informatics Centre</h3><p class="career-role">Programmer | Government Applications</p>
+                    <p>Developed and supported large-scale government applications, including Food Grain Procurement platforms serving critical public-sector operations. Worked extensively with SQL Server, stored procedures, reporting and high-volume transactional data processing.</p>
+                </div>
             </div>
         </div>
     </section>
     <section class='section' id='projects'>
-        <span class='tag'>FEATURED WORK</span><h2>Selected enterprise solutions I've worked on</h2><div class='projects'>
+        <span class='tag'>FEATURED WORK</span><h2>Selected Enterprise Solutions &amp; Engineering Work</h2><div class='projects'>
             <article class='project'>
                 <div class="visual">
                     <img src="ekyc-project.png" alt="eKYC Digital Account Opening Project">
-                </div><div class='content'><h3>eKYC & Digital Account Opening</h3><p>Digital onboarding with PAN, Aadhaar, DigiLocker, bank verification and digital signing integrations.</p><p class='tech'>C# • .NET • Web API • SQL Server • SignalR • Angular</p></div>
+                </div><div class='content'>
+                    <h3>eKYC & Digital Account Opening</h3>
+                    <p>Enterprise digital onboarding platform supporting Aadhaar authentication, PAN verification, DigiLocker, bank verification, digital signing and third-party integrations. Contributed to backend APIs, secure integrations and reliable onboarding workflows.</p>
+                    <p class='tech'>C# • .NET • Web API • SQL Server • SignalR</p>
+                </div>
             </article><article class='project'>
                 <div class="visual">
                     <img src="tms-project.png" alt="Transport Management System Project">
-                </div><div class='content'><h3>Transport Management System</h3><p>Enterprise transportation platform supporting route operations, billing, production workflows and cloud processing.</p><p class='tech'>C# • .NET • SQL Server • AWS Lambda • SQS</p></div>
+                </div><div class='content'>
+                    <h3>Transport Management System</h3>
+                    <p>Enterprise transportation platform supporting route generation, operational workflows and shuttle billing. Worked on .NET backend services, AWS serverless processing, queue-based workflows, integrations and production issue resolution.</p>
+                    <p class='tech'>C# • .NET • SQL Server • REST API • AWS Lambda • SQS • S3 • CloudWatch</p>
+                </div>
             </article><article class='project'>
                 <div class="visual">
                     <img src="food-procurement-project.png" alt="Government Food Procurement Project">
-                </div><div class='content'><h3>Food Procurement System</h3><p>Large-scale government application supporting food-grain procurement and digitisation.</p><p class='tech'>C# • ASP.NET • SQL Server</p></div>
+                </div><div class='content'>
+                    <h3>Food Procurement System</h3>
+                    <p>Large-scale government platform supporting food-grain procurement and public-sector operations. Worked on application development, SQL Server, stored procedures, reporting and high-volume transactional data processing.</p>
+                    <p class='tech'>C# • ASP.NET • SQL Server • SSRS • Web Services</p>
+                </div>
             </article><article class='project'>
                 <div class="visual">
-                    <img src="food-rating-project.png" alt="Food Rating API Project">
-                </div><div class='content'><h3>FoodRatingApp</h3><p>API-driven application with service-layer architecture, logging, exception handling and automated tests.</p><p class='tech'>.NET • REST API • Service Layer • Unit Testing</p></div>
+                    <img src="PDS.png" alt="Food Rating API Project">
+                </div><div class='content'>
+                    <h3>Public Distribution System</h3>
+                    <p>Government public distribution platform supporting the receipt, allocation and distribution of food grains to eligible beneficiaries. Worked on application development, web services, database processing, reporting and operational workflows.</p>
+                    <p class='tech'>C# • ASP.NET • SQL Server • SSRS • Web Services</p>
+                </div>
             </article>
         </div>
     </section>
-      <section class="process-upgrade" id="process">
+    <section class="process-upgrade" id="process">
         <div class="process-head"><span class="pill">✱ PROCESS</span><h2>A step-by-step approach to building reliable enterprise solutions</h2></div>
         <div class="process-grid">
             <article class="process-card">
@@ -1197,7 +1323,7 @@
                         <path d="M16 16l5 5"></path>
                         <circle cx="11" cy="11" r="2"></circle>
                     </svg>
-                </div><h3>Understand</h3><p>Understand business requirements, users, dependencies and the existing system.</p>
+                </div><h3>Understand</h3><p>Understand business requirements, existing workflows, system dependencies and key technical challenges.</p>
             </article>
             <article class="process-card">
                 <span class="process-no">02.</span><div class="process-icon">
@@ -1208,7 +1334,7 @@
                         <path d="M17 14v6"></path>
                         <path d="M14 17h6"></path>
                     </svg>
-                </div><h3>Design</h3><p>Plan application architecture, APIs, database changes and integration boundaries.</p>
+                </div><h3>Design</h3><p>Define solution architecture, APIs, database changes, integrations and scalable application workflows.</p>
             </article>
             <article class="process-card">
                 <span class="process-no">03.</span><div class="process-icon">
@@ -1217,7 +1343,7 @@
                         <path d="M16 9l4 3-4 3"></path>
                         <path d="M14 5l-4 14"></path>
                     </svg>
-                </div><h3>Develop</h3><p>Build clean, maintainable .NET solutions with practical engineering standards.</p>
+                </div><h3>Develop</h3><p>Build clean, secure and maintainable .NET solutions following established engineering standards and coding practices.</p>
             </article>
             <article class="process-card">
                 <span class="process-no">04.</span><div class="process-icon">
@@ -1229,7 +1355,7 @@
                         <path d="M9 11l6-4"></path>
                         <path d="M9 13l6 4"></path>
                     </svg>
-                </div><h3>Integrate</h3><p>Connect cloud services, queues and secure third-party APIs.</p>
+                </div><h3>Integrate</h3><p>Integrate cloud services, messaging queues, databases and secure third-party APIs across enterprise workflows.</p>
             </article>
             <article class="process-card">
                 <span class="process-no">05.</span><div class="process-icon">
@@ -1240,7 +1366,7 @@
 
                         <path d="M8 14l2 2 5-5"></path>
                     </svg>
-                </div><h3>Test</h3><p>Validate critical flows with unit, integration and functional testing.</p>
+                </div><h3>Test</h3><p>Validate critical business flows through unit, integration and functional testing, with focus on reliability and edge cases.</p>
             </article>
             <article class="process-card">
                 <span class="process-no">06.</span><div class="process-icon">
@@ -1255,22 +1381,27 @@
 
                         <path d="M19 5v3"></path>
                     </svg>
-                </div><h3>Deliver</h3><p>Support CI/CD, deployment, monitoring, troubleshooting and production readiness.</p>
+                </div><h3>Deliver</h3><p>Support CI/CD, releases, monitoring, troubleshooting and production readiness to ensure reliable application delivery.</p>
             </article>
         </div>
-        <div class="process-arrow">→</div>
-        <div class="tools-label">Tools that power my work:</div>
+        <!--<div class="process-arrow">→</div>-->
+        <div class="tools-label">My Technology Stack:</div>
         <div class="tools-marquee" aria-label="Technology tools">
             <div class="tools-track">
-                <span>C#</span><span class="tool-star">✦</span><span>.NET Core</span><span class="tool-star">✦</span><span>ASP.NET Core</span><span class="tool-star">✦</span><span>Web API</span><span class="tool-star">✦</span><span>SQL Server</span><span class="tool-star">✦</span><span>AWS Lambda</span><span class="tool-star">✦</span><span>SQS</span><span class="tool-star">✦</span><span>S3</span><span class="tool-star">✦</span><span>API Gateway</span><span class="tool-star">✦</span><span>Azure DevOps</span><span class="tool-star">✦</span><span>Git</span><span class="tool-star">✦</span><span>Postman</span><span class="tool-star">✦</span><span>Visual Studio</span><span class="tool-star">✦</span><span>GitHub Copilot</span><span class="tool-star">✦</span>
-                <span>C#</span><span class="tool-star">✦</span><span>.NET Core</span><span class="tool-star">✦</span><span>ASP.NET Core</span><span class="tool-star">✦</span><span>Web API</span><span class="tool-star">✦</span><span>SQL Server</span><span class="tool-star">✦</span><span>AWS Lambda</span><span class="tool-star">✦</span><span>SQS</span><span class="tool-star">✦</span><span>S3</span><span class="tool-star">✦</span><span>API Gateway</span><span class="tool-star">✦</span><span>Azure DevOps</span><span class="tool-star">✦</span><span>Git</span><span class="tool-star">✦</span><span>Postman</span><span class="tool-star">✦</span><span>Visual Studio</span><span class="tool-star">✦</span><span>GitHub Copilot</span><span class="tool-star">✦</span>
+                <span>C#</span><span class="tool-star">✦</span><span>.NET Core</span><span class="tool-star">✦</span><span>ASP.NET</span><span class="tool-star">✦</span><span>Web API</span><span class="tool-star">✦</span><span>SQL Server</span><span class="tool-star">✦</span><span>AWS Lambda</span><span class="tool-star">✦</span><span>SQS</span><span class="tool-star">✦</span><span>S3</span><span class="tool-star">✦</span><span>API Gateway</span><span class="tool-star">✦</span><span>Azure DevOps</span><span class="tool-star">✦</span><span>Git</span><span class="tool-star">✦</span><span>Postman</span><span class="tool-star">✦</span><span>Visual Studio</span><span class="tool-star">✦</span><span>GitHub Copilot</span><span class="tool-star">✦</span>
+                <span>C#</span><span class="tool-star">✦</span><span>.NET Core</span><span class="tool-star">✦</span><span>ASP.NET</span><span class="tool-star">✦</span><span>Web API</span><span class="tool-star">✦</span><span>SQL Server</span><span class="tool-star">✦</span><span>AWS Lambda</span><span class="tool-star">✦</span><span>SQS</span><span class="tool-star">✦</span><span>S3</span><span class="tool-star">✦</span><span>API Gateway</span><span class="tool-star">✦</span><span>Azure DevOps</span><span class="tool-star">✦</span><span>Git</span><span class="tool-star">✦</span><span>Postman</span><span class="tool-star">✦</span><span>Visual Studio</span><span class="tool-star">✦</span><span>GitHub Copilot</span><span class="tool-star">✦</span>
             </div>
         </div>
     </section>
 
     <section class="contact-upgrade" id="contact">
         <span class="decor one">✉</span><span class="decor two">☁</span>
-        <div class="contact-head"><span class="pill">✱ CONTACT</span><h2>Got an opportunity or project in mind?<br>Let's get in touch.</h2></div>
+        <div class="contact-head">
+            <span class="pill">✱ CONTACT</span><h2>
+                Looking for an experienced .NET professional?
+                <br>Let's connect.
+            </h2>
+        </div>
         <div class="contact-cards">
             <div class="contact-card location">
                 <div class="contact-round-icon">
@@ -1278,7 +1409,7 @@
                         <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                     </svg>
-                </div><h3>Location</h3><p>India</p><p>Open to UAE &amp; Saudi Arabia opportunities</p>
+                </div><h3>Location &amp; Mobility</h3><p>India</p><p>Open to relocation: UAE &amp; Saudi Arabia</p>
             </div>
             <div class="contact-card reach">
                 <div class="contact-round-icon">
@@ -1294,11 +1425,186 @@
                         <path d="M3 7l9 6 9-6"></path>
 
                     </svg>
-                </div><h3>Contact me</h3><a href="mailto:YOUR_EMAIL">farha.qureshi.tech@gmail.com</a><a href="tel:+91XXXXXXXXXX">+91 91741 47816</a><a href="https://linkedin.com/in/farha-qureshi-640438105" target="_blank" rel="noopener">LinkedIn Profile</a>
+                </div><h3>Let's Connect</h3><a href="mailto:YOUR_EMAIL">farha.qureshi.tech@gmail.com</a><a href="tel:+91XXXXXXXXXX">+91 91741 47816</a><a href="https://linkedin.com/in/farha-qureshi-640438105" target="_blank" rel="noopener">View LinkedIn Profile</a>
             </div>
         </div>
-        <div class="resume-box"><h3>Download Farha Qureshi's Resume</h3><p>A quick overview of my enterprise experience, technical skills, cloud expertise and selected projects.</p><a class="resume-btn" href="Farha-Qureshi-Resume.pdf" download>⇩ &nbsp; Download Resume</a></div>
+        <div class="resume-box">
+            <h3>Download Farha Qureshi's Resume</h3>
+            <p>Explore my experience across enterprise .NET development, technical leadership, cloud solutions, FinTech and large-scale applications.</p>
+            <a class="resume-btn" href="Farha-Qureshi-Resume.pdf" download>⇩ &nbsp; Download Resume</a>
+        </div>
     </section>
     <footer class='footer'>© 2026 Farha Qureshi. All rights reserved.</footer>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+
+            /* ==========================
+               HEADINGS
+               ========================== */
+
+            const headings = document.querySelectorAll(
+                ".services-heading, " +
+                ".about-copy, " +
+                ".career-heading, " +
+                "#projects > .tag, " +
+                "#projects > h2, " +
+                ".process-head, " +
+                ".tools-label, " +
+                ".contact-head"
+            );
+
+            headings.forEach(element => {
+                element.classList.add("reveal-heading");
+            });
+
+
+
+            /* ==========================
+               WHAT I DO CARDS
+               ========================== */
+
+            document.querySelectorAll(".card")
+                .forEach((card, index) => {
+
+                    if (index % 2 === 0) {
+                        card.classList.add("reveal-left");
+                    } else {
+                        card.classList.add("reveal-right");
+                    }
+
+                    card.classList.add(
+                        "delay-" + ((index % 4) + 1)
+                    );
+
+                });
+
+
+
+            /* ==========================
+               CAREER TIMELINE
+               ========================== */
+
+            document.querySelectorAll(".career-item")
+                .forEach((item, index) => {
+
+                    item.classList.add(
+                        "reveal-up",
+                        "delay-" + ((index % 4) + 1)
+                    );
+
+                });
+
+
+
+            /* ==========================
+               PROJECT CARDS
+               ========================== */
+
+            document.querySelectorAll(".project")
+                .forEach((project, index) => {
+
+                    if (index % 2 === 0) {
+                        project.classList.add("reveal-left");
+                    } else {
+                        project.classList.add("reveal-right");
+                    }
+
+                    project.classList.add(
+                        "delay-" + ((index % 4) + 1)
+                    );
+
+                });
+
+
+
+            /* ==========================
+               PROCESS CARDS
+               ========================== */
+
+            document.querySelectorAll(".process-card")
+                .forEach((card, index) => {
+
+                    card.classList.add(
+                        "reveal-up",
+                        "delay-" + ((index % 6) + 1)
+                    );
+
+                });
+
+
+
+            /* ==========================
+               CONTACT
+               ========================== */
+
+            document.querySelectorAll(
+                ".contact-card, .resume-box"
+            )
+                .forEach((element, index) => {
+
+                    element.classList.add(
+                        "reveal-up",
+                        "delay-" + ((index % 3) + 1)
+                    );
+
+                });
+
+
+
+            /* ==========================
+               OBSERVER
+               ========================== */
+
+            const observer =
+                new IntersectionObserver(
+
+                    (entries) => {
+
+                        entries.forEach(entry => {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.add(
+                                    "show"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        });
+
+                    },
+
+                    {
+                        threshold: 0.15,
+                        rootMargin:
+                            "0px 0px -40px 0px"
+                    }
+
+                );
+
+
+            document.querySelectorAll(
+                ".reveal-heading, " +
+                ".reveal-left, " +
+                ".reveal-right, " +
+                ".reveal-up"
+            )
+                .forEach(element => {
+
+                    observer.observe(element);
+
+                });
+
+
+        });
+
+    </script>
 </body>
 </html>
