@@ -1424,6 +1424,592 @@
             }
         }
 
+
+
+        /* =====================================================
+           FINAL MOBILE RESPONSIVENESS + RELIABLE ANIMATION FIX
+           ===================================================== */
+        html, body {
+            max-width: 100%;
+            overflow-x: clip;
+        }
+
+        .hero > *,
+        .about-top > *,
+        .cards > *,
+        .projects > *,
+        .process-grid > *,
+        .contact-cards > * {
+            min-width: 0;
+        }
+
+        .hero-contact-item span,
+        .hero-contact-item a,
+        .service-content,
+        .career-details,
+        .project .content,
+        .process-card,
+        .contact-card,
+        .resume-box {
+            overflow-wrap: anywhere;
+            word-break: normal;
+        }
+
+        /* Keep the technology marquee moving on touch devices.
+           The old :hover rule can remain active after a mobile tap. */
+        .tools-marquee {
+            position: relative;
+            width: 100%;
+            max-width: 100vw;
+            overflow: hidden;
+            touch-action: pan-y;
+        }
+
+        .tools-track {
+            display: flex;
+            width: max-content;
+            max-width: none;
+            flex-wrap: nowrap;
+            animation-name: toolsRun !important;
+            animation-duration: 24s !important;
+            animation-timing-function: linear !important;
+            animation-iteration-count: infinite !important;
+            animation-play-state: running !important;
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        /* Pause only for a real mouse, never for touch/mobile. */
+        @media (hover: hover) and (pointer: fine) {
+            .tools-marquee:hover .tools-track {
+                animation-play-state: paused !important;
+            }
+        }
+
+        @keyframes toolsRun {
+            from { transform: translate3d(0, 0, 0); }
+            to   { transform: translate3d(-50%, 0, 0); }
+        }
+
+        /* Keep marquee active even when reduced motion is enabled.
+           Other decorative/reveal animations remain accessibility-aware. */
+        @media (prefers-reduced-motion: reduce) {
+            .tools-track {
+                animation: toolsRun 30s linear infinite !important;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .hero,
+            .section,
+            .process-upgrade,
+            .contact-upgrade {
+                width: 100%;
+                padding-left: clamp(18px, 5vw, 28px);
+                padding-right: clamp(18px, 5vw, 28px);
+            }
+
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 44px;
+            }
+
+            .hero > div:first-child {
+                width: 100%;
+            }
+
+            .hero-contact-list {
+                width: 100%;
+            }
+
+            .hero-contact-item {
+                width: 100%;
+                align-items: flex-start;
+            }
+
+            .portrait-wrapper {
+                width: min(100%, 540px);
+                max-width: 100%;
+                margin: 12px auto 0;
+            }
+
+            .portrait {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                min-height: 0;
+                aspect-ratio: 1 / 0.94;
+                border-radius: 50% 50% 18px 18px;
+                background-position: center 35%;
+            }
+
+            /* Side-entry transforms can clip cards on phones.
+               Use a vertical reveal while retaining attractive motion. */
+            .reveal-left,
+            .reveal-right,
+            .reveal-up,
+            .reveal-heading {
+                transform: translate3d(0, 34px, 0) scale(0.985);
+                transition-duration: .65s;
+            }
+
+            .reveal-left.show,
+            .reveal-right.show,
+            .reveal-up.show,
+            .reveal-heading.show {
+                opacity: 1;
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            .cards,
+            .projects,
+            .process-grid,
+            .contact-cards {
+                width: 100%;
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .card,
+            .project,
+            .process-card,
+            .contact-card,
+            .resume-box {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .tools-marquee {
+                width: calc(100% + 2px);
+                margin-left: -1px;
+                -webkit-mask-image: none;
+                mask-image: none;
+            }
+
+            .decor {
+                opacity: .35;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 13px 18px;
+            }
+
+            .hero,
+            .section,
+            .process-upgrade,
+            .contact-upgrade {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .hero {
+                padding-top: 48px;
+                padding-bottom: 56px;
+                gap: 38px;
+            }
+
+            h1 {
+                font-size: clamp(35px, 11.5vw, 46px);
+                line-height: 1.08;
+                overflow-wrap: anywhere;
+            }
+
+            h2,
+            .services-heading h2,
+            .about-copy h2,
+            #projects h2,
+            .process-head h2,
+            .contact-head h2 {
+                font-size: clamp(30px, 9vw, 36px);
+                line-height: 1.18;
+            }
+
+            .lead {
+                font-size: 17px;
+            }
+
+            .hero-contact-item {
+                gap: 10px;
+                font-size: 14px;
+            }
+
+            .hero-contact-icon {
+                width: 34px;
+                height: 34px;
+                min-width: 34px;
+            }
+
+            .btn,
+            .check-portfolio-btn,
+            .resume-btn {
+                max-width: 100%;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .portrait-wrapper {
+                width: 100%;
+                padding: 0 2px;
+            }
+
+            .portrait {
+                aspect-ratio: 1 / 1;
+                border-radius: 48% 48% 16px 16px;
+            }
+
+            .experience-badge {
+                width: 88px;
+                height: 88px;
+                left: 0;
+                top: 4px;
+            }
+
+            .circle-text {
+                font-size: 10px;
+                letter-spacing: 1.5px;
+            }
+
+            .badge-arrow {
+                font-size: 22px;
+            }
+
+            .sparkles {
+                right: 2px;
+                top: -34px;
+                font-size: 30px;
+                letter-spacing: 5px;
+            }
+
+            .card {
+                padding: 23px;
+                border-radius: 22px;
+            }
+
+            .service-icon {
+                width: 66px;
+                height: 66px;
+                min-width: 66px;
+            }
+
+            .service-icon svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            .service-content h3 {
+                font-size: 20px;
+            }
+
+            .service-content p {
+                font-size: 15px;
+            }
+
+            .about-visual-wrap {
+                width: min(245px, 78vw);
+                height: min(245px, 78vw);
+            }
+
+            .about-curves {
+                display: none;
+            }
+
+            .about-mini-badge {
+                width: 76px;
+                height: 76px;
+                right: -2px;
+                top: 16px;
+            }
+
+            .career-timeline::before {
+                left: 10px;
+            }
+
+            .career-item {
+                grid-template-columns: 22px minmax(0, 1fr);
+                column-gap: 11px;
+            }
+
+            .career-dot {
+                width: 12px;
+                height: 12px;
+            }
+
+            .career-details h3 {
+                font-size: 18px;
+            }
+
+            .career-details p,
+            .career-role {
+                font-size: 14px;
+            }
+
+            .project .visual {
+                height: clamp(170px, 52vw, 215px);
+            }
+
+            .project .content {
+                padding: 20px;
+            }
+
+            .project .content h3 {
+                font-size: 20px;
+            }
+
+            .process-card {
+                padding: 22px;
+                border-radius: 20px;
+            }
+
+            .process-no {
+                right: 18px;
+                top: 18px;
+            }
+
+            .tools-label {
+                margin: 54px 0 24px;
+                font-size: 18px;
+            }
+
+            .tools-label span {
+                max-width: 100%;
+                font-size: 12px;
+                padding: 7px 12px;
+            }
+
+            .tools-track {
+                gap: 20px;
+                font-size: 18px;
+                animation-duration: 20s !important;
+            }
+
+            .contact-head h2 br {
+                display: none;
+            }
+
+            .contact-card {
+                min-height: 195px;
+                padding: 22px 16px;
+            }
+
+            .contact-card p,
+            .contact-card a {
+                width: 100%;
+                font-size: 14px;
+            }
+
+            .resume-box {
+                padding: 42px 18px;
+                border-radius: 20px;
+            }
+
+            .resume-box::before {
+                left: 16px;
+                top: 16px;
+            }
+
+            .resume-box::after {
+                right: 16px;
+                bottom: 16px;
+            }
+
+            .resume-box h3 {
+                font-size: 24px;
+                overflow-wrap: anywhere;
+            }
+
+            .footer {
+                padding: 28px 18px;
+                font-size: 13px;
+                text-align: center;
+            }
+
+            .decor {
+                display: none;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .hero,
+            .section,
+            .process-upgrade,
+            .contact-upgrade {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .tag,
+            .process-head .pill,
+            .contact-head .pill {
+                font-size: 12px;
+                padding: 6px 11px;
+            }
+
+            .hero-contact-item {
+                font-size: 13px;
+            }
+
+            .experience-badge {
+                width: 80px;
+                height: 80px;
+            }
+
+            .card,
+            .process-card,
+            .project .content {
+                padding: 18px;
+            }
+
+            .about-visual-wrap {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        /* =========================================
+   MOBILE CAREER PATH - CARD LAYOUT
+   ========================================= */
+
+        @media (max-width: 600px) {
+
+            .career-heading {
+                text-align: center;
+                margin-bottom: 32px;
+            }
+
+                .career-heading h2 {
+                    text-align: center;
+                    margin-bottom: 12px;
+                }
+
+                .career-heading p {
+                    text-align: center;
+                    max-width: 330px;
+                    margin: 0 auto;
+                    line-height: 1.55;
+                }
+
+
+            /* Remove desktop timeline line */
+            .career-timeline:before {
+                display: none;
+            }
+
+            .career-timeline {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+
+            /* Each experience becomes a card */
+
+            .career-item {
+                display: block;
+                width: 100%;
+                margin-bottom: 22px;
+                padding: 24px 20px;
+                background: rgba(255, 255, 255, 0.55);
+                border: 2px solid #1d1d1d;
+                border-radius: 18px;
+                box-shadow: 5px 5px 0 #7575c8;
+                text-align: left;
+            }
+
+
+            /* Date becomes a small tag */
+
+            .career-date {
+                display: inline-block;
+                margin-bottom: 14px;
+                padding: 6px 11px;
+                background: #ffffff;
+                border: 1.5px solid #1d1d1d;
+                border-radius: 20px;
+                font-size: 11px;
+                font-weight: 800;
+                letter-spacing: 0.3px;
+                text-align: left;
+            }
+
+
+            /* Hide timeline dot */
+
+            .career-dot {
+                display: none;
+            }
+
+
+            .career-details {
+                width: 100%;
+                text-align: left;
+            }
+
+
+                .career-details h3 {
+                    margin: 0 0 5px;
+                    font-size: 20px;
+                    line-height: 1.25;
+                }
+
+
+            .career-role {
+                margin: 0 0 14px;
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 1.4;
+                color: #1d1d1d;
+            }
+
+
+            .career-details p:last-child {
+                margin: 0;
+                font-size: 14px;
+                line-height: 1.65;
+                color: #444;
+            }
+
+
+            /* Small hover/touch styling */
+
+            .career-item {
+                transition: transform 0.25s ease, box-shadow 0.25s ease;
+            }
+        }
+
+
+        /* Extra-small mobile */
+
+        @media (max-width: 360px) {
+
+            .career-item {
+                padding: 20px 17px;
+                border-radius: 16px;
+            }
+
+            .career-details h3 {
+                font-size: 19px;
+            }
+
+            .career-role {
+                font-size: 14px;
+            }
+
+            .career-details p:last-child {
+                font-size: 13.5px;
+            }
+
+            .career-date {
+                font-size: 10px;
+            }
+        }
+
 </style>
 </head>
 <body>
@@ -1581,7 +2167,7 @@
                 </div>
                 <div class="service-content">
                     <h3>Cloud &amp; Serverless Solutions</h3>
-                    <p>Building AWS serverless solutions using Lambda, SQS, S3, API Gateway and CloudWatch for asynchronous processing, integrations and reliable application workflows.</p>
+                    <p>Building cloud and serverless solutions using AWS Lambda, SQS, SNS, S3, API Gateway and CloudWatch, with growing exposure to GCP through AWS-to-GCP cloud migration initiatives.</p>
                 </div>
             </div>
 
@@ -1711,7 +2297,7 @@
                 <div class="career-dot dot-purple"></div>
                 <div class="career-details">
                     <h3>Accenture</h3><p class="career-role">Development Team Lead / Senior .NET Developer</p>
-                    <p>Leading development and production support for an enterprise Transport Management System, coordinating developers, QA, business stakeholders and dependent teams. Hands-on with C#, .NET, REST APIs, SQL Server and AWS serverless services, with responsibility across troubleshooting, cloud workflows, release delivery, code reviews and engineering best practices.</p>
+                                      <p>Leading development and production support for an enterprise Transport Management System, coordinating developers, QA, business stakeholders and dependent teams. Hands-on with C#, .NET, REST APIs, SQL Server and AWS serverless services, with responsibility across troubleshooting, cloud workflows, release delivery, code reviews and engineering best practices. Expanding cloud experience through an AWS-to-GCP migration initiative.</p>
                 </div>
             </div>
             <div class="career-item">
@@ -1854,8 +2440,8 @@
         </div>
         <div class="tools-marquee" aria-label="Technology tools">
             <div class="tools-track">
-                <span>C#</span><span class="tool-star">✦</span><span>.NET Core</span><span class="tool-star">✦</span><span>ASP.NET</span><span class="tool-star">✦</span><span>Web API</span><span class="tool-star">✦</span><span>SQL Server</span><span class="tool-star">✦</span><span>AWS Lambda</span><span class="tool-star">✦</span><span>SQS</span><span class="tool-star">✦</span><span>S3</span><span class="tool-star">✦</span><span>API Gateway</span><span class="tool-star">✦</span><span>Azure DevOps</span><span class="tool-star">✦</span><span>Git</span><span class="tool-star">✦</span><span>Postman</span><span class="tool-star">✦</span><span>Visual Studio</span><span class="tool-star">✦</span><span>GitHub Copilot</span><span class="tool-star">✦</span>
-                <span>C#</span><span class="tool-star">✦</span><span>.NET Core</span><span class="tool-star">✦</span><span>ASP.NET</span><span class="tool-star">✦</span><span>Web API</span><span class="tool-star">✦</span><span>SQL Server</span><span class="tool-star">✦</span><span>AWS Lambda</span><span class="tool-star">✦</span><span>SQS</span><span class="tool-star">✦</span><span>S3</span><span class="tool-star">✦</span><span>API Gateway</span><span class="tool-star">✦</span><span>Azure DevOps</span><span class="tool-star">✦</span><span>Git</span><span class="tool-star">✦</span><span>Postman</span><span class="tool-star">✦</span><span>Visual Studio</span><span class="tool-star">✦</span><span>GitHub Copilot</span><span class="tool-star">✦</span>
+                <span>C#</span><span class="tool-star">✦</span><span>.NET Core</span><span class="tool-star">✦</span><span>ASP.NET</span><span class="tool-star">✦</span><span>Web API</span><span class="tool-star">✦</span><span>SQL Server</span><span class="tool-star">✦</span><span>AWS Lambda</span><span class="tool-star">✦</span><span>SQS</span><span class="tool-star">✦</span><span>S3</span><span class="tool-star">✦</span><span>API Gateway</span><span class="tool-star">✦</span><span>GCP</span><span class="tool-star">✦</span><span>Azure DevOps</span><span class="tool-star">✦</span><span>Git</span><span class="tool-star">✦</span><span>Postman</span><span class="tool-star">✦</span><span>Visual Studio</span><span class="tool-star">✦</span><span>GitHub Copilot</span><span class="tool-star">✦</span>
+                <span>C#</span><span class="tool-star">✦</span><span>.NET Core</span><span class="tool-star">✦</span><span>ASP.NET</span><span class="tool-star">✦</span><span>Web API</span><span class="tool-star">✦</span><span>SQL Server</span><span class="tool-star">✦</span><span>AWS Lambda</span><span class="tool-star">✦</span><span>SQS</span><span class="tool-star">✦</span><span>S3</span><span class="tool-star">✦</span><span>API Gateway</span><span class="tool-star">✦</span><span>GCP</span><span class="tool-star">✦</span><span>Azure DevOps</span><span class="tool-star">✦</span><span>Git</span><span class="tool-star">✦</span><span>Postman</span><span class="tool-star">✦</span><span>Visual Studio</span><span class="tool-star">✦</span><span>GitHub Copilot</span><span class="tool-star">✦</span>
             </div>
         </div>
     </section>
@@ -1903,174 +2489,84 @@
     <footer class='footer'>© 2026 Farha Qureshi. All rights reserved.</footer>
 
     <script>
-
         document.addEventListener("DOMContentLoaded", function () {
+            const addRevealClasses = (selector, classFactory) => {
+                document.querySelectorAll(selector).forEach((element, index) => {
+                    classFactory(element, index);
+                });
+            };
 
-
-            /* ==========================
-               HEADINGS
-               ========================== */
-
-            const headings = document.querySelectorAll(
-                ".services-heading, " +
-                ".about-copy, " +
-                ".career-heading, " +
-                "#projects > .tag, " +
-                "#projects > h2, " +
-                ".process-head, " +
-                ".tools-label, " +
-                ".contact-head"
+            addRevealClasses(
+                ".services-heading, .about-copy, .career-heading, #projects > .tag, #projects > h2, .process-head, .tools-label, .contact-head",
+                element => element.classList.add("reveal-heading")
             );
 
-            headings.forEach(element => {
-                element.classList.add("reveal-heading");
+            addRevealClasses(".card", (element, index) => {
+                element.classList.add(index % 2 === 0 ? "reveal-left" : "reveal-right");
+                element.classList.add("delay-" + ((index % 4) + 1));
             });
 
+            addRevealClasses(".career-item", (element, index) => {
+                element.classList.add("reveal-up", "delay-" + ((index % 4) + 1));
+            });
 
+            addRevealClasses(".project", (element, index) => {
+                element.classList.add(index % 2 === 0 ? "reveal-left" : "reveal-right");
+                element.classList.add("delay-" + ((index % 4) + 1));
+            });
 
-            /* ==========================
-               WHAT I DO CARDS
-               ========================== */
+            addRevealClasses(".process-card", (element, index) => {
+                element.classList.add("reveal-up", "delay-" + ((index % 6) + 1));
+            });
 
-            document.querySelectorAll(".card")
-                .forEach((card, index) => {
+            addRevealClasses(".contact-card, .resume-box", (element, index) => {
+                element.classList.add("reveal-up", "delay-" + ((index % 3) + 1));
+            });
 
-                    if (index % 2 === 0) {
-                        card.classList.add("reveal-left");
-                    } else {
-                        card.classList.add("reveal-right");
+            const revealElements = document.querySelectorAll(
+                ".reveal-heading, .reveal-left, .reveal-right, .reveal-up"
+            );
+
+            if (!("IntersectionObserver" in window)) {
+                revealElements.forEach(element => element.classList.add("show"));
+                return;
+            }
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    } else if (entry.boundingClientRect.top > window.innerHeight * 0.15) {
+                        /* Reset only after the element moves below the viewport,
+                           so the reveal can play again on the next scroll. */
+                        entry.target.classList.remove("show");
                     }
-
-                    card.classList.add(
-                        "delay-" + ((index % 4) + 1)
-                    );
-
                 });
+            }, {
+                threshold: 0.08,
+                rootMargin: "0px 0px -24px 0px"
+            });
 
+            revealElements.forEach(element => observer.observe(element));
 
-
-            /* ==========================
-               CAREER TIMELINE
-               ========================== */
-
-            document.querySelectorAll(".career-item")
-                .forEach((item, index) => {
-
-                    item.classList.add(
-                        "reveal-up",
-                        "delay-" + ((index % 4) + 1)
-                    );
-
+            /* Mobile browsers can preserve a sticky hover state after tapping.
+               Explicitly keep the marquee running after touch and visibility changes. */
+            const tracks = document.querySelectorAll(".tools-track");
+            const keepMarqueeRunning = () => {
+                tracks.forEach(track => {
+                    track.style.animationPlayState = "running";
                 });
+            };
 
-
-
-            /* ==========================
-               PROJECT CARDS
-               ========================== */
-
-            document.querySelectorAll(".project")
-                .forEach((project, index) => {
-
-                    if (index % 2 === 0) {
-                        project.classList.add("reveal-left");
-                    } else {
-                        project.classList.add("reveal-right");
-                    }
-
-                    project.classList.add(
-                        "delay-" + ((index % 4) + 1)
-                    );
-
-                });
-
-
-
-            /* ==========================
-               PROCESS CARDS
-               ========================== */
-
-            document.querySelectorAll(".process-card")
-                .forEach((card, index) => {
-
-                    card.classList.add(
-                        "reveal-up",
-                        "delay-" + ((index % 6) + 1)
-                    );
-
-                });
-
-
-
-            /* ==========================
-               CONTACT
-               ========================== */
-
-            document.querySelectorAll(
-                ".contact-card, .resume-box"
-            )
-                .forEach((element, index) => {
-
-                    element.classList.add(
-                        "reveal-up",
-                        "delay-" + ((index % 3) + 1)
-                    );
-
-                });
-
-
-
-            /* ==========================
-               OBSERVER
-               ========================== */
-
-            const observer =
-                new IntersectionObserver(
-
-                    (entries) => {
-
-                        entries.forEach(entry => {
-
-                            if (entry.isIntersecting) {
-
-                                entry.target.classList.add(
-                                    "show"
-                                );
-
-                                observer.unobserve(
-                                    entry.target
-                                );
-
-                            }
-
-                        });
-
-                    },
-
-                    {
-                        threshold: 0.15,
-                        rootMargin:
-                            "0px 0px -40px 0px"
-                    }
-
-                );
-
-
-            document.querySelectorAll(
-                ".reveal-heading, " +
-                ".reveal-left, " +
-                ".reveal-right, " +
-                ".reveal-up"
-            )
-                .forEach(element => {
-
-                    observer.observe(element);
-
-                });
-
-
+            document.addEventListener("touchstart", keepMarqueeRunning, { passive: true });
+            document.addEventListener("visibilitychange", () => {
+                if (!document.hidden) {
+                    requestAnimationFrame(keepMarqueeRunning);
+                }
+            });
+            window.addEventListener("pageshow", keepMarqueeRunning);
+            keepMarqueeRunning();
         });
-
     </script>
 </body>
 </html>
