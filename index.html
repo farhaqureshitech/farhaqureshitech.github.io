@@ -2117,6 +2117,36 @@
   }
 }
 </style>
+
+<style>
+/* Keep the About experience badge away from the face on mobile */
+@media (max-width: 600px) {
+  .about-visual-wrap {
+    margin-top: 52px;
+  }
+  .about-mini-badge {
+    width: 78px;
+    height: 78px;
+    top: -42px;
+    right: 8px;
+    z-index: 4;
+  }
+  .about-badge-arrow {
+    font-size: 23px;
+  }
+}
+@media (max-width: 360px) {
+  .about-visual-wrap {
+    margin-top: 48px;
+  }
+  .about-mini-badge {
+    width: 72px;
+    height: 72px;
+    top: -38px;
+    right: 5px;
+  }
+}
+</style>
 </head>
 <body>
     <nav><strong>FQ.</strong><button class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-links">☰</button><div class='links' id='primary-links'><a href='#home'>Home</a><a href='#work'>What I Do</a><a href='#about'>About</a><a href='#projects'>Projects</a><a href='#process'>Process</a><a href='#contact'>Contact</a></div></nav>
