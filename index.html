@@ -2075,9 +2075,51 @@
     }
 }
 </style>
+
+<style>
+/* Mobile navigation */
+.mobile-menu-btn { display: none; }
+@media (max-width: 800px) {
+  nav { align-items: center; position: sticky; }
+  nav .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 2px solid #1d1d1d;
+    padding: 10px 18px 18px;
+    flex-direction: column;
+    gap: 2px;
+    box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  }
+  nav .links.open { display: flex; }
+  nav .links a {
+    display: block;
+    margin: 0;
+    padding: 12px 6px;
+    font-size: 16px;
+  }
+  .mobile-menu-btn {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 38px;
+    padding: 0;
+    border: 2px solid #1d1d1d;
+    border-radius: 9px;
+    background: #fff;
+    color: #1d1d1d;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+  }
+}
+</style>
 </head>
 <body>
-    <nav><strong>FQ.</strong><div class='links'><a href='#home'>Home</a><a href='#work'>What I Do</a><a href='#about'>About</a><a href='#projects'>Projects</a><a href='#process'>Process</a><a href='#contact'>Contact</a></div></nav>
+    <nav><strong>FQ.</strong><button class="mobile-menu-btn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-links">☰</button><div class='links' id='primary-links'><a href='#home'>Home</a><a href='#work'>What I Do</a><a href='#about'>About</a><a href='#projects'>Projects</a><a href='#process'>Process</a><a href='#contact'>Contact</a></div></nav>
     <section class='hero' id='home'>
         <div>
             <span class='tag'>✱ HELLO !</span><h1>I'm Farha Qureshi.</h1><p class='lead'>Development Team Lead & Senior .NET Developer with 10+ years of experience building scalable enterprise applications across FinTech, digital onboarding, transportation and government domains.</p>
@@ -2593,6 +2635,23 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuButton = document.querySelector(".mobile-menu-btn");
+            const primaryLinks = document.querySelector("#primary-links");
+            if (mobileMenuButton && primaryLinks) {
+                mobileMenuButton.addEventListener("click", function () {
+                    const isOpen = primaryLinks.classList.toggle("open");
+                    mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
+                    mobileMenuButton.textContent = isOpen ? "×" : "☰";
+                });
+                primaryLinks.querySelectorAll("a").forEach(link => {
+                    link.addEventListener("click", function () {
+                        primaryLinks.classList.remove("open");
+                        mobileMenuButton.setAttribute("aria-expanded", "false");
+                        mobileMenuButton.textContent = "☰";
+                    });
+                });
+            }
+
             const addRevealClasses = (selector, classFactory) => {
                 document.querySelectorAll(selector).forEach((element, index) => {
                     classFactory(element, index);
