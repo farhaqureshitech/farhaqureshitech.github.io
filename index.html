@@ -2017,7 +2017,7 @@
 
 </style>
 
-<!-- Full hero portrait override: keeps the complete profile.jpg visible -->
+<!-- Hero portrait override: shorter frame removes excess space above the head -->
 <style>
 .portrait-wrapper {
     position: relative;
@@ -2028,18 +2028,24 @@
 .portrait {
     width: 100%;
     height: auto;
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 2 / 2.65;
     border: 2px solid #1d1d1d;
     border-radius: 250px 250px 20px 20px;
     background-image: url('profile.jpg');
-    background-size: contain !important;
-    background-position: center center !important;
+    background-size: 100% auto !important;
+    background-position: center bottom !important;
     background-repeat: no-repeat !important;
     background-color: #f5f2ed;
 }
 @media (min-width: 801px) and (max-width: 1100px) {
-    .portrait-wrapper { width: min(100%, 440px); max-width: 440px; }
-    .portrait { height: auto; aspect-ratio: 2 / 3; }
+    .portrait-wrapper {
+        width: min(100%, 440px);
+        max-width: 440px;
+    }
+    .portrait {
+        height: auto;
+        aspect-ratio: 2 / 2.65;
+    }
 }
 @media (max-width: 800px) {
     .portrait-wrapper {
@@ -2052,15 +2058,21 @@
         width: 100%;
         height: auto;
         min-height: 0;
-        aspect-ratio: 2 / 3;
+        aspect-ratio: 2 / 2.65;
         border-radius: 50% 50% 18px 18px;
-        background-size: contain !important;
-        background-position: center center !important;
+        background-size: 100% auto !important;
+        background-position: center bottom !important;
     }
 }
 @media (max-width: 480px) {
-    .portrait-wrapper { width: min(100%, 390px); padding: 0; }
-    .portrait { aspect-ratio: 2 / 3; border-radius: 48% 48% 16px 16px; }
+    .portrait-wrapper {
+        width: min(100%, 390px);
+        padding: 0;
+    }
+    .portrait {
+        aspect-ratio: 2 / 2.65;
+        border-radius: 48% 48% 16px 16px;
+    }
 }
 </style>
 </head>
